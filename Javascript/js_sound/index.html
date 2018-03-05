@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>test bell202</title>
+</head>
+
+<body>
+    <script src="riffwave.js"></script>
+    <p>test bell202</p>
+    <p>&nbsp;</p>
+
+    <p>
+        <script>
+            var playTime = 0;
+            var endTime = 0;
+            var send_value = 96;
+
+            function showVal(value) {
+                var value_txt_div = document.getElementById("slider_value_text");
+                value_txt_div.innerHTML = value;
+                send_value = value;
+            }
+
+            var audio1;
+            var wave1 = new RIFFWAVE(); // Create raw wav file
+            function gen_and_play() {
+
+                var freq_bell202 = [];
+                var phase1200kDelta = 2 * Math.PI * 1200 / 44100;
+                var phase2200kDelta = 2 * Math.PI * 2200 / 44100;
+                var phase = 0;
+
+                //add break for 200ms
+                for (var i = 0; i < 44100 * 10 / 1000; i++) {
+                    freq_bell202.push((Math.round(127.5 * Math.sin(phase) + 127.5)));
+                    phase += phase1200kDelta;
+                }
+
+                var bytesToSend = [send_value, 255 - send_value, send_value ^ 0x0F];
+                for (var k = 0; k < bytesToSend.length; k++) {
+                    //send a byte
+                    var sendValue = bytesToSend[k];
+
+                    var bitCount = 0;
+                    var bitSamples = [];
+                    for (var i = 0; i < 10; i++) {
+                        bitSamples[i] = Math.round(44100 * (i + 1) / 1200) - Math.round(44100 * (i) / 1200);
+                    }
+                    for (var j = 0; j < 10; j++) { //send 9 bits
+                        for (var i = 0; i < bitSamples[j]; i++) {
+                            freq_bell202.push((Math.round(127.5 * Math.sin(phase) + 127.5)));
+
+                            if ((j == 0 || ((sendValue & (1 << (8 - j))) == 0)) && (j != 9)) {
+                                phase += phase2200kDelta;
+                            } else {
+                                phase += phase1200kDelta;
+                            }
+                        }
+                    }
+
+                    for (var i = 0; i < 44100 * 0 / 1000; i++) {
+                        freq_bell202.push((Math.round(127.5 * Math.sin(phase) + 127.5)));
+                        phase += phase1200kDelta;
+                    }
+                }
+
+
+
+
+                var wavetest = new RIFFWAVE(); // Create raw wav file
+                wavetest.header.sampleRate = 44100; // 
+                wavetest.header.numChannels = 1; // 1 channel (mono)
+                wavetest.header.bitsPerSample = 8;
+                wavetest.Make(freq_bell202);
+                var testSound = new Audio(wavetest.dataURI);
+                if (!testSound.paused) { // if playing stop and rewind
+                    testSound.pause();
+                    testSound.currentTime = 0;
+                }
+                testSound.play();
+                playTime = Date.now();
+                console.log("from last end: " + (playTime - endTime));
+                testSound.onended = function () {
+                    endTime = Date.now();
+                    console.log("Duration: " + (endTime - playTime));
+                    setTimeout(gen_and_play, 0)
+                };
+            }
+            setTimeout(gen_and_play, 10)
+        </script>
+
+        <input id="slider_value" type="range" min="0" max="255" step="1" value="96" oninput="showVal(this.value)" />
+    </p>
+    <div id="slider_value_text">96</div>
+
+
+
+</body>
+
+</html>
