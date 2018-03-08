@@ -86,6 +86,22 @@
             value_txt_div.innerHTML = value;
             send_value[index] = value;
         }
+        
+        var autoBlinkLED;
+        function blinkBoxFunc(value){
+            clearInterval(autoBlinkLED);
+            if (value){
+                autoBlinkLED = setInterval(autoBlinkLEDFunc, 250);
+            }
+        }
+        
+        function autoBlinkLEDFunc(){
+            var index=0;
+            var ledSlider = document.getElementById("slider_value" + index);
+            if (ledSlider.value==200) ledSlider.value=10;
+            else ledSlider.value=200;
+            showVal(ledSlider.value,index);
+        }
     </script>
 
     <input id="slider_value0" type="range" min="0" max="255" step="1" value="100" oninput="showVal(this.value,0)" /> LED0 brightness
@@ -99,6 +115,8 @@
 
     <input id="slider_value3" type="range" min="0" max="255" step="1" value="0" oninput="showVal(this.value,3)" /> Motor Amplitude
     <div id="slider_value3_text">0</div>
+    
+    <input type="checkbox" id="blinkBox" onclick="blinkBoxFunc(this.checked)">Check Box for LED Blink
 </body>
 
 </html>
