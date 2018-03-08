@@ -14533,9 +14533,7 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="X4" library="adafruit2" deviceset="XTAL" device="-3.2X1.5" value="32.768"/>
 <part name="JP1" library="microbuilder" deviceset="HEADER-1X1" device="2MM"/>
 <part name="JP2" library="microbuilder" deviceset="HEADER-1X1" device="2MM"/>
-<part name="TP3" library="microbuilder" deviceset="TESTPOINT" device="ROUND2MM"/>
-<part name="TP4" library="microbuilder" deviceset="TESTPOINT" device="ROUND2MM"/>
-<part name="SW2" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="KMR2">
+<part name="SW2" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="DFU">
 <attribute name="DIGIKEY" value="CKN10246CT-ND"/>
 </part>
 <part name="U$21" library="microbuilder" deviceset="GND" device=""/>
@@ -14560,7 +14558,7 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF"/>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="300pF"/>
 <part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="300pF"/>
-<part name="SW1" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="KMR2">
+<part name="SW1" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="RST">
 <attribute name="DIGIKEY" value="CKN10246CT-ND"/>
 </part>
 <part name="U4" library="SparkFun-IC-Amplifiers" library_urn="urn:adsk.eagle:library:520" deviceset="LMV324" device="" package3d_urn="urn:adsk.eagle:package:38668/1" value="LMV324"/>
@@ -14622,7 +14620,6 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="R20" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
 <part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
-<part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
 <part name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
 <part name="U7" library="microbuilder" deviceset="AUDIOAMP_PAM8302A" device="" value="PAM8302AASCR"/>
 <part name="R23" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100"/>
@@ -14643,6 +14640,12 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="R26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
 <part name="R27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
+<part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
+<part name="J5" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="1.27MM" package3d_urn="urn:adsk.eagle:package:38086/1"/>
+<part name="J6" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="1.27MM" package3d_urn="urn:adsk.eagle:package:38086/1"/>
+<part name="U$62" library="microbuilder" deviceset="GND" device=""/>
+<part name="JP4" library="microbuilder" deviceset="HEADER-1X1" device="2MM" value="SWO"/>
+<part name="U$63" library="microbuilder" deviceset="3.3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14741,8 +14744,6 @@ low Z at low F). Try to block everything
 <instance part="X4" gate="G$1" x="0" y="-48.26"/>
 <instance part="JP1" gate="G$1" x="27.94" y="-53.34"/>
 <instance part="JP2" gate="G$1" x="20.32" y="-53.34" rot="R180"/>
-<instance part="TP3" gate="G$1" x="48.26" y="15.24" rot="R270"/>
-<instance part="TP4" gate="G$1" x="48.26" y="12.7" rot="R270"/>
 <instance part="SW2" gate="G$1" x="-27.94" y="33.02">
 <attribute name="DIGIKEY" x="-27.94" y="33.02" size="1.778" layer="96" display="off"/>
 </instance>
@@ -14834,7 +14835,6 @@ low Z at low F). Try to block everything
 <instance part="R20" gate="G$1" x="63.5" y="-198.12"/>
 <instance part="SUPPLY4" gate="G$1" x="55.88" y="-200.66"/>
 <instance part="R21" gate="G$1" x="50.8" y="-187.96" rot="R270"/>
-<instance part="R22" gate="G$1" x="50.8" y="-177.8" rot="R270"/>
 <instance part="J3" gate="G$1" x="139.7" y="-185.42" rot="R180"/>
 <instance part="U7" gate="G$1" x="83.82" y="-251.46"/>
 <instance part="R23" gate="G$1" x="63.5" y="-251.46"/>
@@ -14855,6 +14855,12 @@ low Z at low F). Try to block everything
 <instance part="R26" gate="G$1" x="48.26" y="-246.38" rot="R270"/>
 <instance part="R27" gate="G$1" x="48.26" y="-236.22" rot="R270"/>
 <instance part="J4" gate="G$1" x="137.16" y="-243.84" rot="R180"/>
+<instance part="R22" gate="G$1" x="50.8" y="-175.26" rot="R270"/>
+<instance part="J5" gate="G$1" x="-33.02" y="10.16" rot="MR180"/>
+<instance part="J6" gate="G$1" x="-43.18" y="-2.54"/>
+<instance part="U$62" gate="G$1" x="-25.4" y="12.7" rot="R90"/>
+<instance part="JP4" gate="G$1" x="66.04" y="10.16" rot="R180"/>
+<instance part="U$63" gate="G$1" x="-35.56" y="-5.08" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -15128,13 +15134,16 @@ low Z at low F). Try to block everything
 <pinref part="U$61" gate="G$1" pin="GND"/>
 <wire x1="114.3" y1="-261.62" x2="114.3" y2="-274.32" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J5" gate="G$1" pin="1"/>
+<pinref part="U$62" gate="G$1" pin="GND"/>
+</segment>
 </net>
 <net name="SWDIO" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="SWDIO"/>
 <wire x1="35.56" y1="15.24" x2="48.26" y2="15.24" width="0.1524" layer="91"/>
 <label x="38.1" y="15.24" size="1.778" layer="95"/>
-<pinref part="TP3" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="2"/>
@@ -15147,7 +15156,6 @@ low Z at low F). Try to block everything
 <pinref part="U1" gate="G$1" pin="SWDCLK"/>
 <wire x1="35.56" y1="12.7" x2="48.26" y2="12.7" width="0.1524" layer="91"/>
 <label x="38.1" y="12.7" size="1.778" layer="95"/>
-<pinref part="TP4" gate="G$1" pin="P$1"/>
 </segment>
 <segment>
 <pinref part="J1" gate="G$1" pin="3"/>
@@ -15211,8 +15219,11 @@ low Z at low F). Try to block everything
 <net name="SWO" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.18/SWO"/>
-<wire x1="35.56" y1="2.54" x2="48.26" y2="2.54" width="0.1524" layer="91"/>
 <label x="38.1" y="2.54" size="1.778" layer="95"/>
+<wire x1="35.56" y1="2.54" x2="63.5" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="2.54" x2="63.5" y2="10.16" width="0.1524" layer="91"/>
+<pinref part="JP4" gate="G$1" pin="1"/>
+<wire x1="63.5" y1="10.16" x2="68.58" y2="10.16" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -15275,12 +15286,17 @@ low Z at low F). Try to block everything
 <wire x1="86.36" y1="38.1" x2="88.9" y2="38.1" width="0.1524" layer="91"/>
 <junction x="86.36" y="38.1"/>
 </segment>
+<segment>
+<pinref part="J6" gate="G$1" pin="1"/>
+<pinref part="U$63" gate="G$1" pin="3.3V"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.25"/>
-<wire x1="-10.16" y1="10.16" x2="-22.86" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="10.16" x2="-27.94" y2="10.16" width="0.1524" layer="91"/>
 <label x="-22.86" y="10.16" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <wire x1="-165.1" y1="58.42" x2="-177.8" y2="58.42" width="0.1524" layer="91"/>
@@ -15290,8 +15306,9 @@ low Z at low F). Try to block everything
 <net name="SCL" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.26"/>
-<wire x1="-10.16" y1="7.62" x2="-22.86" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="7.62" x2="-27.94" y2="7.62" width="0.1524" layer="91"/>
 <label x="-22.86" y="7.62" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="3"/>
 </segment>
 <segment>
 <wire x1="-165.1" y1="55.88" x2="-177.8" y2="55.88" width="0.1524" layer="91"/>
@@ -15445,8 +15462,9 @@ low Z at low F). Try to block everything
 <net name="A4/0.28" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.28/AIN4"/>
-<wire x1="-10.16" y1="2.54" x2="-22.86" y2="2.54" width="0.1524" layer="91"/>
 <label x="-22.86" y="2.54" size="1.778" layer="95"/>
+<pinref part="J6" gate="G$1" pin="4"/>
+<wire x1="-38.1" y1="2.54" x2="-10.16" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="-109.22" y1="40.64" x2="-121.92" y2="40.64" width="0.1524" layer="91"/>
@@ -15456,8 +15474,9 @@ low Z at low F). Try to block everything
 <net name="A5/0.29" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.29/AIN5"/>
-<wire x1="-10.16" y1="0" x2="-22.86" y2="0" width="0.1524" layer="91"/>
 <label x="-22.86" y="0" size="1.778" layer="95"/>
+<pinref part="J6" gate="G$1" pin="3"/>
+<wire x1="-10.16" y1="0" x2="-38.1" y2="0" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="-109.22" y1="43.18" x2="-121.92" y2="43.18" width="0.1524" layer="91"/>
@@ -15467,8 +15486,9 @@ low Z at low F). Try to block everything
 <net name="P0.27" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="P0.27"/>
-<wire x1="-10.16" y1="5.08" x2="-22.86" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="5.08" x2="-27.94" y2="5.08" width="0.1524" layer="91"/>
 <label x="-22.86" y="5.08" size="1.778" layer="95"/>
+<pinref part="J5" gate="G$1" pin="4"/>
 </segment>
 <segment>
 <wire x1="-165.1" y1="53.34" x2="-177.8" y2="53.34" width="0.1524" layer="91"/>
@@ -15477,33 +15497,14 @@ low Z at low F). Try to block everything
 </net>
 <net name="A6/P0.30" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="P0.30/AIN6"/>
-<wire x1="-10.16" y1="-2.54" x2="-22.86" y2="-2.54" width="0.1524" layer="91"/>
-<label x="-22.86" y="-2.54" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-165.1" y1="50.8" x2="-177.8" y2="50.8" width="0.1524" layer="91"/>
 <label x="-177.8" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="A7/P0.31" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="P0.31/AIN7"/>
-<wire x1="-10.16" y1="-5.08" x2="-22.86" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-22.86" y="-5.08" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-165.1" y1="48.26" x2="-177.8" y2="48.26" width="0.1524" layer="91"/>
 <label x="-177.8" y="48.26" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="190.5" y1="66.04" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="205.74" y1="78.74" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
-<label x="193.04" y="68.58" size="1.778" layer="95"/>
-<pinref part="C12" gate="G$1" pin="1"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<junction x="205.74" y="66.04"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -15606,15 +15607,6 @@ low Z at low F). Try to block everything
 <wire x1="-165.1" y1="33.02" x2="-170.18" y2="33.02" width="0.1524" layer="91"/>
 <label x="-170.18" y="33.02" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="U5" gate="G$1" pin="EN"/>
-<wire x1="-22.86" y1="-121.92" x2="-27.94" y2="-121.92" width="0.1524" layer="91"/>
-<wire x1="-27.94" y1="-121.92" x2="-27.94" y2="-137.16" width="0.1524" layer="91"/>
-<wire x1="-27.94" y1="-137.16" x2="-33.02" y2="-137.16" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="-137.16" x2="-33.02" y2="-134.62" width="0.1524" layer="91"/>
-<label x="-27.94" y="-121.92" size="1.778" layer="95"/>
-<pinref part="R17" gate="G$1" pin="2"/>
-</segment>
 </net>
 <net name="USBD+" class="0">
 <segment>
@@ -15654,8 +15646,8 @@ low Z at low F). Try to block everything
 </segment>
 <segment>
 <pinref part="R22" gate="G$1" pin="1"/>
-<wire x1="50.8" y1="-172.72" x2="35.56" y2="-172.72" width="0.1524" layer="91"/>
-<label x="38.1" y="-172.72" size="1.778" layer="95"/>
+<wire x1="50.8" y1="-170.18" x2="35.56" y2="-170.18" width="0.1524" layer="91"/>
+<label x="38.1" y="-170.18" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="DFU" class="0">
@@ -15788,7 +15780,7 @@ low Z at low F). Try to block everything
 <wire x1="101.6" y1="-43.18" x2="93.98" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$13" class="0">
+<net name="AMP_REF" class="0">
 <segment>
 <pinref part="U4" gate="G1" pin="-IN"/>
 <wire x1="101.6" y1="-38.1" x2="99.06" y2="-38.1" width="0.1524" layer="91"/>
@@ -15809,6 +15801,7 @@ low Z at low F). Try to block everything
 <wire x1="132.08" y1="-17.78" x2="132.08" y2="-22.86" width="0.1524" layer="91"/>
 <wire x1="132.08" y1="-22.86" x2="116.84" y2="-22.86" width="0.1524" layer="91"/>
 <junction x="116.84" y="-22.86"/>
+<label x="104.14" y="-30.48" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -16058,8 +16051,8 @@ low Z at low F). Try to block everything
 <pinref part="C19" gate="G$1" pin="2"/>
 <pinref part="R21" gate="G$1" pin="1"/>
 <pinref part="R22" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="-180.34" x2="50.8" y2="-182.88" width="0.1524" layer="91"/>
 <junction x="50.8" y="-182.88"/>
-<pinref part="R22" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$26" class="0">
@@ -16110,6 +16103,41 @@ low Z at low F). Try to block everything
 <pinref part="R26" gate="G$1" pin="1"/>
 <pinref part="R27" gate="G$1" pin="2"/>
 <junction x="48.26" y="-241.3"/>
+</segment>
+</net>
+<net name="A7/0.31" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="P0.31/AIN7"/>
+<wire x1="-10.16" y1="-5.08" x2="-25.4" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-22.86" y="-5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="190.5" y1="66.04" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="78.74" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
+<label x="193.04" y="68.58" size="1.778" layer="95"/>
+<pinref part="C12" gate="G$1" pin="1"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<junction x="205.74" y="66.04"/>
+</segment>
+</net>
+<net name="A6/0.30" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="P0.30/AIN6"/>
+<label x="-22.86" y="-2.54" size="1.778" layer="95"/>
+<pinref part="J6" gate="G$1" pin="2"/>
+<wire x1="-10.16" y1="-2.54" x2="-38.1" y2="-2.54" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="EN_VCC2" class="0">
+<segment>
+<pinref part="U5" gate="G$1" pin="EN"/>
+<wire x1="-22.86" y1="-121.92" x2="-27.94" y2="-121.92" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="-121.92" x2="-27.94" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="-137.16" x2="-33.02" y2="-137.16" width="0.1524" layer="91"/>
+<wire x1="-33.02" y1="-137.16" x2="-33.02" y2="-134.62" width="0.1524" layer="91"/>
+<label x="-27.94" y="-121.92" size="1.778" layer="95"/>
+<pinref part="R17" gate="G$1" pin="2"/>
 </segment>
 </net>
 </nets>
