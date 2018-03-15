@@ -16245,6 +16245,82 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun-Retired" urn="urn:adsk.eagle:library:533">
+<description>&lt;h3&gt;SparkFun Electronics' Retired foot prints&lt;/h3&gt;
+In this library you'll find all manner of retired footprints for resistors, capacitors, board names, ICs, etc., that are &lt;b&gt; no longer used&lt;/b&gt; in our catalog.
+&lt;br&gt;
+&lt;br&gt;
+We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
+&lt;br&gt;
+&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
+&lt;br&gt;
+&lt;br&gt;
+You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
+<packages>
+<package name="KPS-1290" library_version="1">
+<wire x1="-3.35" y1="1.3" x2="-3.35" y2="-1.3" width="0.2032" layer="21"/>
+<wire x1="-3.35" y1="-1.3" x2="3.35" y2="-1.3" width="0.2032" layer="21"/>
+<wire x1="3.35" y1="-1.3" x2="3.35" y2="1.3" width="0.2032" layer="21"/>
+<wire x1="3.35" y1="1.3" x2="-3.35" y2="1.3" width="0.2032" layer="21"/>
+<wire x1="1.4" y1="-1.5" x2="1.4" y2="-2.8" width="0.127" layer="51"/>
+<wire x1="1.4" y1="-2.8" x2="-1.4" y2="-2.8" width="0.127" layer="51"/>
+<wire x1="-1.4" y1="-2.8" x2="-1.4" y2="-1.5" width="0.127" layer="51"/>
+<smd name="P$1" x="-4.15" y="1.1" dx="1" dy="0.8" layer="1"/>
+<smd name="P$2" x="-4.15" y="-1.1" dx="1" dy="0.8" layer="1"/>
+<smd name="P$3" x="4.15" y="-1.1" dx="1" dy="0.8" layer="1"/>
+<smd name="P$4" x="4.15" y="1.1" dx="1" dy="0.8" layer="1"/>
+<smd name="O" x="-2.25" y="2.25" dx="0.7" dy="1.5" layer="1"/>
+<smd name="P" x="0.75" y="2.25" dx="0.7" dy="1.5" layer="1"/>
+<smd name="S" x="2.25" y="2.25" dx="0.7" dy="1.5" layer="1"/>
+<text x="2.5" y="-2.492" size="0.4064" layer="25">&gt;NAME</text>
+<text x="2.5" y="-3.23" size="0.4064" layer="27">&gt;VALUE</text>
+<hole x="-1.5" y="0" drill="0.9"/>
+<hole x="1.5" y="0" drill="0.9"/>
+</package>
+</packages>
+<symbols>
+<symbol name="SW_SPDT" library_version="1">
+<wire x1="0" y1="0" x2="2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="3.175" y2="-2.54" width="0.127" layer="94"/>
+<wire x1="2.54" y1="2.54" x2="3.175" y2="2.54" width="0.1524" layer="94"/>
+<circle x="2.54" y="2.54" radius="0.3592" width="0.2032" layer="94"/>
+<circle x="2.54" y="-2.54" radius="0.3592" width="0.2032" layer="94"/>
+<circle x="0" y="0" radius="0.3592" width="0.2032" layer="94"/>
+<text x="-1.905" y="-6.35" size="1.778" layer="95">&gt;NAME</text>
+<text x="-2.54" y="3.81" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="P" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+<pin name="S" x="5.08" y="-2.54" visible="off" length="short" direction="pas" rot="R180"/>
+<pin name="O" x="5.08" y="2.54" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SWITCH_SPDT" library_version="1">
+<description>SWCH-10651
+
+Side-actuated SPDT slide switch, as used on the Arduino Pro</description>
+<gates>
+<gate name="G$1" symbol="SW_SPDT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="KPS-1290">
+<connects>
+<connect gate="G$1" pin="O" pad="O"/>
+<connect gate="G$1" pin="P" pad="P"/>
+<connect gate="G$1" pin="S" pad="S"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="PROD_ID" value="SWCH-10651" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -16255,25 +16331,37 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 </class>
 </classes>
 <parts>
-<part name="U1" library="microbuilder" deviceset="NRF52832_MODULE_MDBT42" device="" value="MDBT42"/>
+<part name="U1" library="microbuilder" deviceset="NRF52832_MODULE_MDBT42" device="" value="MDBT42">
+<attribute name="DIGIKEY" value="1597-1434-ND"/>
+</part>
 <part name="U$1" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$2" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$3" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$4" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$5" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$6" library="microbuilder" deviceset="GND" device=""/>
-<part name="D1" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="RED"/>
-<part name="D2" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="BLUE"/>
+<part name="D1" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="RED">
+<attribute name="LCSC" value="C72037"/>
+</part>
+<part name="D2" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="BLUE">
+<attribute name="LCSC" value="C2293"/>
+</part>
 <part name="U$7" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$8" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$9" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$10" library="microbuilder" deviceset="GND" device=""/>
-<part name="L2" library="microbuilder" deviceset="INDUCTOR" device="0805-NO" value="10uH"/>
+<part name="L2" library="microbuilder" deviceset="INDUCTOR" device="0805-NO" value="10uH">
+<attribute name="LCSC" value="C112611"/>
+</part>
 <part name="U$11" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$12" library="microbuilder" deviceset="3.3V" device=""/>
 <part name="U$13" library="microbuilder" deviceset="3.3V" device=""/>
-<part name="U3" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T-2ACI/OT"/>
-<part name="CHG" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="ORANGE"/>
+<part name="U3" library="microbuilder" deviceset="MCP73831/2" device="" value="MCP73831T-2ACI/OT">
+<attribute name="LCSC" value="C14879"/>
+</part>
+<part name="CHG" library="microbuilder" deviceset="LED" device="0805_NOOUTLINE" value="ORANGE">
+<attribute name="LCSC" value="C154481"/>
+</part>
 <part name="U$33" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$36" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$38" library="microbuilder" deviceset="VBUS" device=""/>
@@ -16283,11 +16371,17 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="U$27" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$29" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$30" library="microbuilder" deviceset="GND" device=""/>
-<part name="U2" library="microbuilder" deviceset="VREG_SOT23-5" device="" value="AP2112(3.3V)"/>
-<part name="X2" library="microbuilder" deviceset="CON_JST_PH_2PIN" device="" value="JSTPH"/>
+<part name="U2" library="microbuilder" deviceset="VREG_SOT23-5" device="" value="AP2112(3.3V)">
+<attribute name="LCSC" value="C51118"/>
+</part>
+<part name="X2" library="microbuilder" deviceset="CON_JST_PH_2PIN" device="" value="JSTPH">
+<attribute name="DIGIKEY" value="455-1749-1-ND"/>
+</part>
 <part name="U$16" library="microbuilder" deviceset="VBAT" device=""/>
 <part name="U$22" library="microbuilder" deviceset="GND" device=""/>
-<part name="X3" library="microbuilder" deviceset="USB" device="_MICRO_20329_V2" value="4u20329"/>
+<part name="X3" library="microbuilder" deviceset="USB" device="_MICRO_20329_V2" value="4u20329">
+<attribute name="LCSC" value="C91146"/>
+</part>
 <part name="U$18" library="microbuilder" deviceset="VBUS" device=""/>
 <part name="U$19" library="microbuilder" deviceset="GND" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
@@ -16299,10 +16393,16 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="TP2" library="microbuilder" deviceset="TESTPOINT" device="1.5X2.0MM_NOCREAM" value="FRST"/>
 <part name="U$42" library="microbuilder" deviceset="VBUS" device=""/>
 <part name="U$43" library="microbuilder" deviceset="VBAT" device=""/>
-<part name="D5" library="microbuilder" deviceset="DIODE-SCHOTTKY" device="SOD-123" value="MBR120"/>
-<part name="Q3" library="microbuilder" deviceset="MOSFET-P" device="" value="DMG3415U-7"/>
+<part name="D5" library="microbuilder" deviceset="DIODE-SCHOTTKY" device="SOD-123" value="MBR120">
+<attribute name="LCSC" value="C130880"/>
+</part>
+<part name="Q3" library="microbuilder" deviceset="MOSFET-P" device="" value="DMG3415U-7">
+<attribute name="LCSC" value="C10487"/>
+</part>
 <part name="U$44" library="microbuilder" deviceset="GND" device=""/>
-<part name="X4" library="adafruit2" deviceset="XTAL" device="-3.2X1.5" value="32.768"/>
+<part name="X4" library="adafruit2" deviceset="XTAL" device="-3.2X1.5" value="32.768">
+<attribute name="LCSC" value="C48615"/>
+</part>
 <part name="JP1" library="microbuilder" deviceset="HEADER-1X1" device="2MM"/>
 <part name="JP2" library="microbuilder" deviceset="HEADER-1X1" device="2MM"/>
 <part name="SW2" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="DFU">
@@ -16312,125 +16412,501 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="U$23" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$28" library="microbuilder" deviceset="GND" device=""/>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="SMD" package3d_urn="urn:adsk.eagle:package:38093/1"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="22pF"/>
-<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="22pF"/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
-<part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1nF"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="806K"/>
-<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2M"/>
-<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF"/>
-<part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="300pF"/>
-<part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="300pF"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
+<part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="22pF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1836"/>
+</part>
+<part name="C2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="22pF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1836"/>
+</part>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84376"/>
+</part>
+<part name="C5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1nF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C16005"/>
+</part>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="806K">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C104516"/>
+</part>
+<part name="R6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2M">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C26112"/>
+</part>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C103905"/>
+</part>
+<part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C103905"/>
+</part>
+<part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C29822"/>
+</part>
+<part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="300pF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1735"/>
+</part>
+<part name="C9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="300pF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1735"/>
+</part>
 <part name="SW1" library="microbuilder" deviceset="SWITCH_TACT_SMT" device="4.6X2.8" value="RST">
 <attribute name="DIGIKEY" value="CKN10246CT-ND"/>
 </part>
-<part name="U4" library="SparkFun-IC-Amplifiers" library_urn="urn:adsk.eagle:library:520" deviceset="LMV324" device="" package3d_urn="urn:adsk.eagle:package:38668/1" value="LMV324"/>
-<part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="L1" library="microbuilder" deviceset="INDUCTOR" device="0805-NO" value="10uH"/>
+<part name="U4" library="SparkFun-IC-Amplifiers" library_urn="urn:adsk.eagle:library:520" deviceset="LMV324" device="" package3d_urn="urn:adsk.eagle:package:38668/1" value="LMV324">
+<attribute name="LCSC" value="C7974"/>
+</part>
+<part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="L1" library="microbuilder" deviceset="INDUCTOR" device="0805-NO" value="10uH">
+<attribute name="LCSC" value="C112611"/>
+</part>
 <part name="U$15" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$17" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$20" library="microbuilder" deviceset="3.3V" device=""/>
 <part name="U$24" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
 <part name="U$25" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
 <part name="U$26" library="microbuilder" deviceset="GND" device=""/>
-<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF"/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2.2K"/>
+<part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C103905"/>
+</part>
+<part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C103905"/>
+</part>
+<part name="C13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C28378"/>
+</part>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2.2K">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101970"/>
+</part>
 <part name="U$31" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCCA" device=""/>
 <part name="U$40" library="microbuilder" deviceset="GND" device=""/>
-<part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
+<part name="C14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
-<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="20k"/>
-<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="20k"/>
-<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
+<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C103905"/>
+</part>
+<part name="R13" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
+<part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="20k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101548"/>
+</part>
+<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="20k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101548"/>
+</part>
+<part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
 <part name="JP3" library="SparkFun-Jumpers" library_urn="urn:adsk.eagle:library:528" deviceset="JUMPER-SMT_2_NC_TRACE" device="_NO-SILK" package3d_urn="urn:adsk.eagle:package:39286/1"/>
-<part name="U$45" library="jos-ph" deviceset="APA102" device="2020"/>
+<part name="U$45" library="jos-ph" deviceset="APA102" device="2020">
+<attribute name="DIGIKEY" value="1568-1826-ND"/>
+</part>
 <part name="U$46" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$47" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$48" library="microbuilder" deviceset="GND" device=""/>
-<part name="U5" library="microbuilder" deviceset="VREG_SOT23-5" device="" value="AP2112(3.3V)"/>
-<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k"/>
-<part name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
-<part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF"/>
+<part name="U5" library="microbuilder" deviceset="VREG_SOT23-5" device="" value="AP2112(3.3V)">
+<attribute name="LCSC" value="C51118"/>
+</part>
+<part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="100k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C103905"/>
+</part>
+<part name="C15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
 <part name="SUPPLY1" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
 <part name="SUPPLY2" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
 <part name="U$49" library="microbuilder" deviceset="GND" device=""/>
-<part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF"/>
+<part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C28378"/>
+</part>
 <part name="U$50" library="microbuilder" deviceset="GND" device=""/>
-<part name="U$51" library="jos-ph" deviceset="APA102" device="2020"/>
+<part name="U$51" library="jos-ph" deviceset="APA102" device="2020">
+<attribute name="DIGIKEY" value="1568-1826-ND"/>
+</part>
 <part name="SUPPLY3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
 <part name="U$52" library="microbuilder" deviceset="GND" device=""/>
-<part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF"/>
+<part name="C18" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C28378"/>
+</part>
 <part name="U$53" library="microbuilder" deviceset="GND" device=""/>
-<part name="U6" library="microbuilder" deviceset="AUDIOAMP_PAM8302A" device="" value="PAM8302AASCR"/>
-<part name="R18" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100"/>
-<part name="C19" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
-<part name="C20" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
-<part name="C21" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
+<part name="U6" library="microbuilder" deviceset="AUDIOAMP_PAM8302A" device="" value="PAM8302AASCR">
+<attribute name="LCSC" value="C113367"/>
+</part>
+<part name="R18" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100">
+<attribute name="LCSC" value="C153166"/>
+</part>
 <part name="U$54" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$55" library="microbuilder" deviceset="GND" device=""/>
-<part name="FB1" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite"/>
-<part name="FB2" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite"/>
-<part name="C22" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF"/>
-<part name="C23" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF"/>
+<part name="FB1" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite">
+<attribute name="LCSC" value="C12389"/>
+</part>
+<part name="FB2" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite">
+<attribute name="LCSC" value="C12389"/>
+</part>
+<part name="C22" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF">
+<attribute name="LCSC" value="C46326"/>
+</part>
+<part name="C23" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF">
+<attribute name="LCSC" value="C46326"/>
+</part>
 <part name="U$56" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$57" library="microbuilder" deviceset="GND" device=""/>
-<part name="R19" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100"/>
-<part name="R20" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
+<part name="R19" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100">
+<attribute name="LCSC" value="C153166"/>
+</part>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
-<part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
+<part name="R21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84375"/>
+</part>
 <part name="J3" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
-<part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
+<part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84375"/>
+</part>
 <part name="J5" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="1.27MM" package3d_urn="urn:adsk.eagle:package:38086/1"/>
 <part name="J6" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="1.27MM" package3d_urn="urn:adsk.eagle:package:38086/1"/>
 <part name="U$62" library="microbuilder" deviceset="GND" device=""/>
-<part name="JP4" library="microbuilder" deviceset="HEADER-1X1" device="2MM" value="SWO"/>
+<part name="JP4" library="microbuilder" deviceset="HEADER-1X1" device="2MM"/>
 <part name="U$63" library="microbuilder" deviceset="3.3V" device=""/>
-<part name="D4" library="microbuilder" deviceset="DIODE" device="SOD-323" value="1N4148"/>
+<part name="D4" library="microbuilder" deviceset="DIODE" device="SOD-323" value="1N4148">
+<attribute name="LCSC" value="C99332"/>
+</part>
 <part name="U$64" library="microbuilder" deviceset="3.3V" device=""/>
 <part name="SJ2" library="microbuilder" deviceset="SOLDERJUMPER" device="CLOSED" value="BAT"/>
 <part name="J7" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="6_PIN_SERIAL_TARGET" device="RA_SMT" package3d_urn="urn:adsk.eagle:package:38001/1"/>
-<part name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
-<part name="R30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
+<part name="R29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
+<part name="R30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C101404"/>
+</part>
 <part name="U$65" library="microbuilder" deviceset="VBUS" device=""/>
 <part name="U$66" library="microbuilder" deviceset="GND" device=""/>
 <part name="J8" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="1.27MM" package3d_urn="urn:adsk.eagle:package:38086/1"/>
 <part name="U$67" library="microbuilder" deviceset="GND" device=""/>
-<part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF"/>
-<part name="R28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k"/>
+<part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="100nF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C28378"/>
+</part>
+<part name="R28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84376"/>
+</part>
 <part name="C30" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="TBD"/>
-<part name="U8" library="microbuilder" deviceset="AUDIOAMP_PAM8302A" device="" value="PAM8302AASCR"/>
-<part name="R31" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100"/>
-<part name="C32" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
-<part name="C33" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="1uF"/>
-<part name="C34" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="10uF"/>
+<part name="U8" library="microbuilder" deviceset="AUDIOAMP_PAM8302A" device="" value="PAM8302AASCR">
+<attribute name="LCSC" value="C113367"/>
+</part>
+<part name="R31" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100">
+<attribute name="LCSC" value="C153166"/>
+</part>
 <part name="U$68" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$69" library="microbuilder" deviceset="GND" device=""/>
-<part name="FB5" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite"/>
-<part name="FB6" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite"/>
-<part name="C35" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF"/>
-<part name="C36" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF"/>
+<part name="FB5" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite">
+<attribute name="LCSC" value="C12389"/>
+</part>
+<part name="FB6" library="microbuilder" deviceset="FERRITE" device="_0805" value="Ferrite">
+<attribute name="LCSC" value="C12389"/>
+</part>
+<part name="C35" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF">
+<attribute name="LCSC" value="C46326"/>
+</part>
+<part name="C36" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="220pF">
+<attribute name="LCSC" value="C46326"/>
+</part>
 <part name="U$70" library="microbuilder" deviceset="GND" device=""/>
 <part name="U$71" library="microbuilder" deviceset="GND" device=""/>
-<part name="R32" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100"/>
-<part name="R33" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="10K"/>
+<part name="R32" library="microbuilder" deviceset="RESISTOR" device="0805_NOOUTLINE" value="100">
+<attribute name="LCSC" value="C153166"/>
+</part>
 <part name="SUPPLY6" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC_2" device=""/>
-<part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
+<part name="R34" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84375"/>
+</part>
 <part name="J9" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_02" device="" package3d_urn="urn:adsk.eagle:package:38039/1"/>
-<part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K"/>
+<part name="R35" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="5K">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84375"/>
+</part>
 <part name="C37" library="microbuilder" deviceset="CAP_CERAMIC" device="0805-NOOUTLINE" value="TBD"/>
 <part name="J4" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_07" device="" package3d_urn="urn:adsk.eagle:package:38129/1"/>
 <part name="J10" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_07" device="" package3d_urn="urn:adsk.eagle:package:38129/1"/>
@@ -16439,6 +16915,81 @@ Datasheet: https://cdn-shop.adafruit.com/product-files/2343/APA102C.pdf</descrip
 <part name="J13" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_07" device="" package3d_urn="urn:adsk.eagle:package:38129/1"/>
 <part name="J14" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_07" device="" package3d_urn="urn:adsk.eagle:package:38129/1"/>
 <part name="J15" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_07" device="" package3d_urn="urn:adsk.eagle:package:38129/1"/>
+<part name="SW3" library="SparkFun-Retired" library_urn="urn:adsk.eagle:library:533" deviceset="SWITCH_SPDT" device="">
+<attribute name="LCSC" value="C128955"/>
+</part>
+<part name="C21" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C1713"/>
+</part>
+<part name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C29822"/>
+</part>
+<part name="C20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C29822"/>
+</part>
+<part name="C24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C29822"/>
+</part>
+<part name="C26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="1uF">
+<spice>
+<pinmapping spiceprefix="C">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C29822"/>
+</part>
+<part name="R20" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84376"/>
+</part>
+<part name="R24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10k">
+<spice>
+<pinmapping spiceprefix="R">
+<pinmap gate="G$1" pin="1" pinorder="1"/>
+<pinmap gate="G$1" pin="2" pinorder="2"/>
+</pinmapping>
+</spice>
+<attribute name="LCSC" value="C84376"/>
+</part>
 </parts>
 <sheets>
 <sheet>
@@ -16490,25 +17041,37 @@ low Z at low F). Try to block everything
 &gt;1MHz or so.</text>
 </plain>
 <instances>
-<instance part="U1" gate="G$1" x="12.7" y="7.62"/>
+<instance part="U1" gate="G$1" x="12.7" y="7.62">
+<attribute name="DIGIKEY" x="12.7" y="7.62" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$1" gate="G$1" x="-7.62" y="-63.5"/>
 <instance part="U$2" gate="G$1" x="7.62" y="-63.5"/>
 <instance part="U$3" gate="G$1" x="-2.54" y="-33.02"/>
 <instance part="U$4" gate="G$1" x="-12.7" y="-33.02"/>
 <instance part="U$5" gate="G$1" x="-12.7" y="15.24"/>
 <instance part="U$6" gate="G$1" x="27.94" y="-33.02"/>
-<instance part="D1" gate="G$1" x="55.88" y="-22.86" rot="R270"/>
-<instance part="D2" gate="G$1" x="66.04" y="-22.86" rot="R270"/>
+<instance part="D1" gate="G$1" x="55.88" y="-22.86" rot="R270">
+<attribute name="LCSC" x="55.88" y="-22.86" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="D2" gate="G$1" x="66.04" y="-22.86" rot="R270">
+<attribute name="LCSC" x="66.04" y="-22.86" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
 <instance part="U$7" gate="G$1" x="55.88" y="-33.02"/>
 <instance part="U$8" gate="G$1" x="66.04" y="-33.02"/>
 <instance part="U$9" gate="G$1" x="60.96" y="-48.26" rot="R90"/>
 <instance part="U$10" gate="G$1" x="60.96" y="15.24"/>
-<instance part="L2" gate="G$1" x="-27.94" y="-10.16"/>
+<instance part="L2" gate="G$1" x="-27.94" y="-10.16">
+<attribute name="LCSC" x="-27.94" y="-10.16" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$11" gate="G$1" x="-35.56" y="-33.02"/>
 <instance part="U$12" gate="G$1" x="-17.78" y="-12.7" rot="R90"/>
 <instance part="U$13" gate="G$1" x="60.96" y="-55.88" rot="R270"/>
-<instance part="U3" gate="G$1" x="137.16" y="71.12"/>
-<instance part="CHG" gate="G$1" x="106.68" y="68.58"/>
+<instance part="U3" gate="G$1" x="137.16" y="71.12">
+<attribute name="LCSC" x="137.16" y="71.12" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="CHG" gate="G$1" x="106.68" y="68.58">
+<attribute name="LCSC" x="106.68" y="68.58" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$33" gate="G$1" x="170.18" y="55.88"/>
 <instance part="U$36" gate="G$1" x="165.1" y="55.88"/>
 <instance part="U$38" gate="G$1" x="99.06" y="78.74"/>
@@ -16518,11 +17081,17 @@ low Z at low F). Try to block everything
 <instance part="U$27" gate="G$1" x="-17.78" y="55.88"/>
 <instance part="U$29" gate="G$1" x="22.86" y="55.88"/>
 <instance part="U$30" gate="G$1" x="0" y="55.88"/>
-<instance part="U2" gate="G$1" x="10.16" y="73.66"/>
-<instance part="X2" gate="G$1" x="48.26" y="68.58" rot="R180"/>
+<instance part="U2" gate="G$1" x="10.16" y="73.66">
+<attribute name="LCSC" x="10.16" y="73.66" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="X2" gate="G$1" x="48.26" y="68.58" rot="R180">
+<attribute name="DIGIKEY" x="48.26" y="68.58" size="1.778" layer="96" rot="R180" display="off"/>
+</instance>
 <instance part="U$16" gate="G$1" x="50.8" y="81.28"/>
 <instance part="U$22" gate="G$1" x="50.8" y="55.88"/>
-<instance part="X3" gate="G$1" x="81.28" y="73.66" rot="R270"/>
+<instance part="X3" gate="G$1" x="81.28" y="73.66" rot="R270">
+<attribute name="LCSC" x="81.28" y="73.66" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$18" gate="G$1" x="88.9" y="63.5"/>
 <instance part="U$19" gate="G$1" x="76.2" y="58.42"/>
 <instance part="GND1" gate="1" x="-116.84" y="27.94" rot="R90"/>
@@ -16533,11 +17102,17 @@ low Z at low F). Try to block everything
 <instance part="U$41" gate="G$1" x="-15.24" y="-58.42"/>
 <instance part="TP2" gate="G$1" x="48.26" y="17.78" rot="R270"/>
 <instance part="U$42" gate="G$1" x="-33.02" y="91.44"/>
-<instance part="U$43" gate="G$1" x="-22.86" y="91.44"/>
-<instance part="D5" gate="G$1" x="-27.94" y="76.2"/>
-<instance part="Q3" gate="G$1" x="-22.86" y="83.82" rot="MR180"/>
+<instance part="U$43" gate="G$1" x="-22.86" y="104.14"/>
+<instance part="D5" gate="G$1" x="-27.94" y="76.2">
+<attribute name="LCSC" x="-27.94" y="76.2" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="Q3" gate="G$1" x="-22.86" y="83.82" rot="MR180">
+<attribute name="LCSC" x="-22.86" y="83.82" size="1.778" layer="96" rot="MR180" display="off"/>
+</instance>
 <instance part="U$44" gate="G$1" x="-33.02" y="55.88"/>
-<instance part="X4" gate="G$1" x="0" y="-48.26"/>
+<instance part="X4" gate="G$1" x="0" y="-48.26">
+<attribute name="LCSC" x="0" y="-48.26" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="JP1" gate="G$1" x="27.94" y="-53.34"/>
 <instance part="JP2" gate="G$1" x="20.32" y="-53.34" rot="R180"/>
 <instance part="SW2" gate="G$1" x="-27.94" y="33.02">
@@ -16547,132 +17122,250 @@ low Z at low F). Try to block everything
 <instance part="U$23" gate="G$1" x="17.78" y="-68.58"/>
 <instance part="U$28" gate="G$1" x="30.48" y="-68.58"/>
 <instance part="J1" gate="G$1" x="50.8" y="-53.34"/>
-<instance part="R2" gate="G$1" x="66.04" y="-10.16" rot="R90"/>
-<instance part="R1" gate="G$1" x="55.88" y="-10.16" rot="R90"/>
-<instance part="C1" gate="G$1" x="-7.62" y="-53.34"/>
-<instance part="C2" gate="G$1" x="7.62" y="-53.34"/>
-<instance part="R3" gate="G$1" x="116.84" y="68.58" rot="R180"/>
-<instance part="R7" gate="G$1" x="160.02" y="71.12" rot="R180"/>
-<instance part="C5" gate="G$1" x="170.18" y="68.58"/>
-<instance part="C12" gate="G$1" x="190.5" y="63.5"/>
-<instance part="R4" gate="G$1" x="205.74" y="83.82" rot="R270"/>
-<instance part="R6" gate="G$1" x="205.74" y="60.96" rot="R270"/>
-<instance part="R12" gate="G$1" x="-33.02" y="68.58" rot="R270"/>
-<instance part="R5" gate="G$1" x="-10.16" y="66.04" rot="R270"/>
-<instance part="C6" gate="G$1" x="-17.78" y="66.04"/>
-<instance part="C8" gate="G$1" x="22.86" y="66.04"/>
-<instance part="C3" gate="G$1" x="-12.7" y="-20.32"/>
-<instance part="C4" gate="G$1" x="-35.56" y="-17.78"/>
-<instance part="C7" gate="G$1" x="17.78" y="-60.96"/>
-<instance part="C9" gate="G$1" x="30.48" y="-60.96"/>
+<instance part="R2" gate="G$1" x="66.04" y="-10.16" rot="R90">
+<attribute name="LCSC" x="66.04" y="-10.16" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R1" gate="G$1" x="55.88" y="-10.16" rot="R90">
+<attribute name="LCSC" x="55.88" y="-10.16" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C1" gate="G$1" x="-7.62" y="-53.34">
+<attribute name="LCSC" x="-7.62" y="-53.34" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C2" gate="G$1" x="7.62" y="-53.34">
+<attribute name="LCSC" x="7.62" y="-53.34" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R3" gate="G$1" x="116.84" y="68.58" rot="R180">
+<attribute name="LCSC" x="116.84" y="68.58" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R7" gate="G$1" x="160.02" y="71.12" rot="R180">
+<attribute name="LCSC" x="160.02" y="71.12" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C5" gate="G$1" x="170.18" y="68.58">
+<attribute name="LCSC" x="170.18" y="68.58" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C12" gate="G$1" x="190.5" y="63.5">
+<attribute name="LCSC" x="190.5" y="63.5" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R4" gate="G$1" x="205.74" y="83.82" rot="R270">
+<attribute name="LCSC" x="205.74" y="83.82" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R6" gate="G$1" x="205.74" y="60.96" rot="R270">
+<attribute name="LCSC" x="205.74" y="60.96" size="1.778" layer="96" rot="R270" display="off"/>
+</instance>
+<instance part="R12" gate="G$1" x="-33.02" y="68.58" rot="R270">
+<attribute name="LCSC" x="-33.02" y="68.58" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R5" gate="G$1" x="-10.16" y="66.04" rot="R270">
+<attribute name="LCSC" x="-10.16" y="66.04" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C6" gate="G$1" x="-17.78" y="66.04">
+<attribute name="LCSC" x="-17.78" y="66.04" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C8" gate="G$1" x="22.86" y="66.04">
+<attribute name="LCSC" x="22.86" y="66.04" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C3" gate="G$1" x="-12.7" y="-20.32">
+<attribute name="LCSC" x="-12.7" y="-20.32" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C4" gate="G$1" x="-35.56" y="-17.78">
+<attribute name="LCSC" x="-35.56" y="-17.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C7" gate="G$1" x="17.78" y="-60.96">
+<attribute name="LCSC" x="17.78" y="-60.96" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C9" gate="G$1" x="30.48" y="-60.96">
+<attribute name="LCSC" x="30.48" y="-60.96" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SW1" gate="G$1" x="-22.86" y="-50.8">
 <attribute name="DIGIKEY" x="-22.86" y="-50.8" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="U4" gate="G1" x="109.22" y="-40.64"/>
+<instance part="U4" gate="G1" x="109.22" y="-40.64">
+<attribute name="LCSC" x="109.22" y="-40.64" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U4" gate="G2" x="114.3" y="0" rot="MR180"/>
 <instance part="U4" gate="G3" x="139.7" y="0" rot="MR180"/>
 <instance part="U4" gate="G4" x="139.7" y="-35.56"/>
 <instance part="U4" gate="G5" x="114.3" y="30.48"/>
-<instance part="C10" gate="G$1" x="86.36" y="33.02"/>
-<instance part="C11" gate="G$1" x="101.6" y="33.02"/>
-<instance part="L1" gate="G$1" x="93.98" y="38.1"/>
+<instance part="C10" gate="G$1" x="86.36" y="33.02">
+<attribute name="LCSC" x="86.36" y="33.02" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C11" gate="G$1" x="101.6" y="33.02">
+<attribute name="LCSC" x="101.6" y="33.02" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="L1" gate="G$1" x="93.98" y="38.1">
+<attribute name="LCSC" x="93.98" y="38.1" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$15" gate="G$1" x="86.36" y="20.32"/>
 <instance part="U$17" gate="G$1" x="101.6" y="20.32"/>
 <instance part="U$20" gate="G$1" x="86.36" y="40.64"/>
 <instance part="U$24" gate="G$1" x="114.3" y="38.1"/>
 <instance part="U$25" gate="G$1" x="93.98" y="-27.94"/>
 <instance part="U$26" gate="G$1" x="93.98" y="-58.42"/>
-<instance part="R8" gate="G$1" x="93.98" y="-35.56" rot="R270"/>
-<instance part="R9" gate="G$1" x="93.98" y="-50.8" rot="R270"/>
-<instance part="C13" gate="G$1" x="83.82" y="-48.26"/>
-<instance part="R10" gate="G$1" x="86.36" y="5.08" rot="R270"/>
+<instance part="R8" gate="G$1" x="93.98" y="-35.56" rot="R270">
+<attribute name="LCSC" x="93.98" y="-35.56" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R9" gate="G$1" x="93.98" y="-50.8" rot="R270">
+<attribute name="LCSC" x="93.98" y="-50.8" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C13" gate="G$1" x="83.82" y="-48.26">
+<attribute name="LCSC" x="83.82" y="-48.26" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R10" gate="G$1" x="86.36" y="5.08" rot="R270">
+<attribute name="LCSC" x="86.36" y="5.08" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$31" gate="G$1" x="86.36" y="10.16"/>
 <instance part="U$40" gate="G$1" x="86.36" y="-10.16"/>
-<instance part="C14" gate="G$1" x="91.44" y="0" rot="R90"/>
+<instance part="C14" gate="G$1" x="91.44" y="0" rot="R90">
+<attribute name="LCSC" x="91.44" y="0" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="J2" gate="G$1" x="78.74" y="-2.54" rot="MR180"/>
-<instance part="R11" gate="G$1" x="99.06" y="-10.16" rot="R270"/>
-<instance part="R13" gate="G$1" x="106.68" y="-12.7" rot="R270"/>
-<instance part="R14" gate="G$1" x="119.38" y="-7.62"/>
-<instance part="R15" gate="G$1" x="144.78" y="-7.62"/>
-<instance part="R16" gate="G$1" x="132.08" y="-12.7" rot="R270"/>
+<instance part="R11" gate="G$1" x="99.06" y="-10.16" rot="R270">
+<attribute name="LCSC" x="99.06" y="-10.16" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R13" gate="G$1" x="106.68" y="-12.7" rot="R270">
+<attribute name="LCSC" x="106.68" y="-12.7" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R14" gate="G$1" x="119.38" y="-7.62">
+<attribute name="LCSC" x="119.38" y="-7.62" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R15" gate="G$1" x="144.78" y="-7.62">
+<attribute name="LCSC" x="144.78" y="-7.62" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R16" gate="G$1" x="132.08" y="-12.7" rot="R270">
+<attribute name="LCSC" x="132.08" y="-12.7" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="JP3" gate="G$1" x="157.48" y="0"/>
-<instance part="U$45" gate="G$1" x="50.8" y="-129.54"/>
+<instance part="U$45" gate="G$1" x="50.8" y="-129.54">
+<attribute name="DIGIKEY" x="50.8" y="-129.54" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$46" gate="G$1" x="-40.64" y="-139.7"/>
 <instance part="U$47" gate="G$1" x="0" y="-139.7"/>
 <instance part="U$48" gate="G$1" x="-22.86" y="-139.7"/>
-<instance part="U5" gate="G$1" x="-12.7" y="-121.92"/>
-<instance part="R17" gate="G$1" x="-33.02" y="-129.54" rot="R270"/>
-<instance part="C15" gate="G$1" x="-40.64" y="-129.54"/>
-<instance part="C16" gate="G$1" x="0" y="-129.54"/>
+<instance part="U5" gate="G$1" x="-12.7" y="-121.92">
+<attribute name="LCSC" x="-12.7" y="-121.92" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R17" gate="G$1" x="-33.02" y="-129.54" rot="R270">
+<attribute name="LCSC" x="-33.02" y="-129.54" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C15" gate="G$1" x="-40.64" y="-129.54">
+<attribute name="LCSC" x="-40.64" y="-129.54" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C16" gate="G$1" x="0" y="-129.54">
+<attribute name="LCSC" x="0" y="-129.54" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY1" gate="G$1" x="0" y="-116.84"/>
 <instance part="SUPPLY2" gate="G$1" x="50.8" y="-114.3"/>
 <instance part="U$49" gate="G$1" x="48.26" y="-139.7"/>
-<instance part="C17" gate="G$1" x="55.88" y="-116.84" rot="R90"/>
+<instance part="C17" gate="G$1" x="55.88" y="-116.84" rot="R90">
+<attribute name="LCSC" x="55.88" y="-116.84" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$50" gate="G$1" x="63.5" y="-116.84" rot="R90"/>
-<instance part="U$51" gate="G$1" x="91.44" y="-129.54"/>
+<instance part="U$51" gate="G$1" x="91.44" y="-129.54">
+<attribute name="DIGIKEY" x="91.44" y="-129.54" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY3" gate="G$1" x="91.44" y="-114.3"/>
 <instance part="U$52" gate="G$1" x="88.9" y="-139.7"/>
-<instance part="C18" gate="G$1" x="96.52" y="-116.84" rot="R90"/>
+<instance part="C18" gate="G$1" x="96.52" y="-116.84" rot="R90">
+<attribute name="LCSC" x="96.52" y="-116.84" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$53" gate="G$1" x="104.14" y="-116.84" rot="R90"/>
-<instance part="U6" gate="G$1" x="86.36" y="-193.04"/>
-<instance part="R18" gate="G$1" x="66.04" y="-193.04"/>
-<instance part="C19" gate="G$1" x="53.34" y="-182.88" rot="R270"/>
-<instance part="C20" gate="G$1" x="53.34" y="-193.04" rot="R270"/>
-<instance part="C21" gate="G$1" x="55.88" y="-210.82"/>
+<instance part="U6" gate="G$1" x="86.36" y="-193.04">
+<attribute name="LCSC" x="86.36" y="-193.04" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R18" gate="G$1" x="66.04" y="-193.04">
+<attribute name="LCSC" x="66.04" y="-193.04" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$54" gate="G$1" x="55.88" y="-218.44"/>
 <instance part="U$55" gate="G$1" x="71.12" y="-218.44"/>
-<instance part="FB1" gate="G$1" x="104.14" y="-182.88"/>
-<instance part="FB2" gate="G$1" x="104.14" y="-193.04"/>
-<instance part="C22" gate="G$1" x="109.22" y="-200.66"/>
-<instance part="C23" gate="G$1" x="116.84" y="-200.66"/>
+<instance part="FB1" gate="G$1" x="104.14" y="-182.88">
+<attribute name="LCSC" x="104.14" y="-182.88" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="FB2" gate="G$1" x="104.14" y="-193.04">
+<attribute name="LCSC" x="104.14" y="-193.04" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C22" gate="G$1" x="109.22" y="-200.66">
+<attribute name="LCSC" x="109.22" y="-200.66" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C23" gate="G$1" x="116.84" y="-200.66">
+<attribute name="LCSC" x="116.84" y="-200.66" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$56" gate="G$1" x="109.22" y="-218.44"/>
 <instance part="U$57" gate="G$1" x="116.84" y="-218.44"/>
-<instance part="R19" gate="G$1" x="66.04" y="-182.88"/>
-<instance part="R20" gate="G$1" x="63.5" y="-198.12"/>
+<instance part="R19" gate="G$1" x="66.04" y="-182.88">
+<attribute name="LCSC" x="66.04" y="-182.88" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY4" gate="G$1" x="55.88" y="-200.66"/>
-<instance part="R21" gate="G$1" x="50.8" y="-187.96" rot="R270"/>
+<instance part="R21" gate="G$1" x="50.8" y="-187.96" rot="R270">
+<attribute name="LCSC" x="50.8" y="-187.96" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="J3" gate="G$1" x="139.7" y="-185.42" rot="R180"/>
-<instance part="R22" gate="G$1" x="50.8" y="-175.26" rot="R270"/>
+<instance part="R22" gate="G$1" x="50.8" y="-175.26" rot="R270">
+<attribute name="LCSC" x="50.8" y="-175.26" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="J5" gate="G$1" x="-33.02" y="10.16" rot="MR180"/>
 <instance part="J6" gate="G$1" x="-43.18" y="-2.54"/>
 <instance part="U$62" gate="G$1" x="-25.4" y="12.7" rot="R90"/>
 <instance part="JP4" gate="G$1" x="66.04" y="10.16" rot="R180"/>
 <instance part="U$63" gate="G$1" x="-35.56" y="-5.08" rot="R270"/>
-<instance part="D4" gate="G$1" x="-71.12" y="-43.18" rot="R90"/>
+<instance part="D4" gate="G$1" x="-71.12" y="-43.18" rot="R90">
+<attribute name="LCSC" x="-71.12" y="-43.18" size="1.778" layer="96" rot="R90" display="off"/>
+</instance>
 <instance part="U$64" gate="G$1" x="-71.12" y="-35.56"/>
 <instance part="SJ2" gate="1" x="-88.9" y="-48.26" rot="R180"/>
 <instance part="J7" gate="G$1" x="-124.46" y="-43.18"/>
-<instance part="R29" gate="G$1" x="-114.3" y="-45.72"/>
-<instance part="R30" gate="G$1" x="-114.3" y="-43.18"/>
+<instance part="R29" gate="G$1" x="-114.3" y="-45.72">
+<attribute name="LCSC" x="-114.3" y="-45.72" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R30" gate="G$1" x="-114.3" y="-43.18">
+<attribute name="LCSC" x="-114.3" y="-43.18" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$65" gate="G$1" x="-116.84" y="-40.64" rot="R270"/>
 <instance part="U$66" gate="G$1" x="-116.84" y="-35.56" rot="R90"/>
 <instance part="J8" gate="G$1" x="-73.66" y="10.16" rot="MR180"/>
 <instance part="U$67" gate="G$1" x="-66.04" y="5.08" rot="R90"/>
-<instance part="C29" gate="G$1" x="-99.06" y="-48.26" rot="R90"/>
-<instance part="R28" gate="G$1" x="-78.74" y="-40.64" rot="R180"/>
+<instance part="C29" gate="G$1" x="-99.06" y="-48.26" rot="R90">
+<attribute name="LCSC" x="-99.06" y="-48.26" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R28" gate="G$1" x="-78.74" y="-40.64" rot="R180">
+<attribute name="LCSC" x="-78.74" y="-40.64" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="C30" gate="G$1" x="45.72" y="-187.96" smashed="yes">
 <attribute name="NAME" x="41.93" y="-185.17" size="1.27" layer="95" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="41.93" y="-188.2" size="1.27" layer="96" font="vector" rot="R180" align="center"/>
 </instance>
-<instance part="U8" gate="G$1" x="88.9" y="-271.78"/>
-<instance part="R31" gate="G$1" x="68.58" y="-271.78"/>
-<instance part="C32" gate="G$1" x="55.88" y="-261.62" rot="R270"/>
-<instance part="C33" gate="G$1" x="55.88" y="-271.78" rot="R270"/>
-<instance part="C34" gate="G$1" x="58.42" y="-289.56"/>
+<instance part="U8" gate="G$1" x="88.9" y="-271.78">
+<attribute name="LCSC" x="88.9" y="-271.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R31" gate="G$1" x="68.58" y="-271.78">
+<attribute name="LCSC" x="68.58" y="-271.78" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$68" gate="G$1" x="58.42" y="-297.18"/>
 <instance part="U$69" gate="G$1" x="73.66" y="-297.18"/>
-<instance part="FB5" gate="G$1" x="106.68" y="-261.62"/>
-<instance part="FB6" gate="G$1" x="106.68" y="-271.78"/>
-<instance part="C35" gate="G$1" x="111.76" y="-279.4"/>
-<instance part="C36" gate="G$1" x="119.38" y="-279.4"/>
+<instance part="FB5" gate="G$1" x="106.68" y="-261.62">
+<attribute name="LCSC" x="106.68" y="-261.62" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="FB6" gate="G$1" x="106.68" y="-271.78">
+<attribute name="LCSC" x="106.68" y="-271.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C35" gate="G$1" x="111.76" y="-279.4">
+<attribute name="LCSC" x="111.76" y="-279.4" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C36" gate="G$1" x="119.38" y="-279.4">
+<attribute name="LCSC" x="119.38" y="-279.4" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="U$70" gate="G$1" x="111.76" y="-297.18"/>
 <instance part="U$71" gate="G$1" x="119.38" y="-297.18"/>
-<instance part="R32" gate="G$1" x="68.58" y="-261.62"/>
-<instance part="R33" gate="G$1" x="66.04" y="-276.86"/>
+<instance part="R32" gate="G$1" x="68.58" y="-261.62">
+<attribute name="LCSC" x="68.58" y="-261.62" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="SUPPLY6" gate="G$1" x="58.42" y="-279.4"/>
-<instance part="R34" gate="G$1" x="53.34" y="-266.7" rot="R270"/>
+<instance part="R34" gate="G$1" x="53.34" y="-266.7" rot="R270">
+<attribute name="LCSC" x="53.34" y="-266.7" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="J9" gate="G$1" x="142.24" y="-264.16" rot="R180"/>
-<instance part="R35" gate="G$1" x="53.34" y="-254" rot="R270"/>
+<instance part="R35" gate="G$1" x="53.34" y="-254" rot="R270">
+<attribute name="LCSC" x="53.34" y="-254" size="1.778" layer="96" display="off"/>
+</instance>
 <instance part="C37" gate="G$1" x="48.26" y="-266.7" smashed="yes">
 <attribute name="NAME" x="44.47" y="-263.91" size="1.27" layer="95" font="vector" rot="R180" align="center"/>
 <attribute name="VALUE" x="44.47" y="-266.94" size="1.27" layer="96" font="vector" rot="R180" align="center"/>
@@ -16684,6 +17377,42 @@ low Z at low F). Try to block everything
 <instance part="J13" gate="G$1" x="-149.86" y="-162.56"/>
 <instance part="J14" gate="G$1" x="-160.02" y="-162.56"/>
 <instance part="J15" gate="G$1" x="-160.02" y="-185.42"/>
+<instance part="SW3" gate="G$1" x="-22.86" y="96.52" smashed="yes" rot="R270">
+<attribute name="LCSC" x="-22.86" y="96.52" size="1.778" layer="96" rot="R270" display="off"/>
+<attribute name="NAME" x="-21.59" y="100.965" size="1.778" layer="95" rot="R270"/>
+</instance>
+<instance part="C21" gate="G$1" x="55.88" y="-208.28">
+<attribute name="LCSC" x="55.88" y="-208.28" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C25" gate="G$1" x="58.42" y="-287.02">
+<attribute name="LCSC" x="58.42" y="-287.02" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C19" gate="G$1" x="53.34" y="-182.88" smashed="yes" rot="R90">
+<attribute name="NAME" x="57.404" y="-182.499" size="1.778" layer="95"/>
+<attribute name="VALUE" x="57.404" y="-185.039" size="1.778" layer="96"/>
+<attribute name="LCSC" x="53.34" y="-182.88" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C20" gate="G$1" x="53.34" y="-193.04" smashed="yes" rot="R90">
+<attribute name="NAME" x="57.404" y="-192.659" size="1.778" layer="95"/>
+<attribute name="VALUE" x="57.404" y="-195.199" size="1.778" layer="96"/>
+<attribute name="LCSC" x="53.34" y="-193.04" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C24" gate="G$1" x="55.88" y="-261.62" smashed="yes" rot="R90">
+<attribute name="NAME" x="59.944" y="-261.239" size="1.778" layer="95"/>
+<attribute name="VALUE" x="59.944" y="-263.779" size="1.778" layer="96"/>
+<attribute name="LCSC" x="55.88" y="-261.62" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="C26" gate="G$1" x="55.88" y="-271.78" smashed="yes" rot="R90">
+<attribute name="NAME" x="59.944" y="-271.399" size="1.778" layer="95"/>
+<attribute name="VALUE" x="59.944" y="-273.939" size="1.778" layer="96"/>
+<attribute name="LCSC" x="55.88" y="-271.78" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R20" gate="G$1" x="63.5" y="-198.12" rot="R180">
+<attribute name="LCSC" x="63.5" y="-198.12" size="1.778" layer="96" display="off"/>
+</instance>
+<instance part="R24" gate="G$1" x="66.04" y="-276.86" rot="R180">
+<attribute name="LCSC" x="66.04" y="-276.86" size="1.778" layer="96" display="off"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -16916,9 +17645,9 @@ low Z at low F). Try to block everything
 <pinref part="U$53" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C21" gate="G$1" pin="2"/>
 <pinref part="U$54" gate="G$1" pin="GND"/>
 <wire x1="55.88" y1="-213.36" x2="55.88" y2="-215.9" width="0.1524" layer="91"/>
+<pinref part="C21" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U6" gate="G$1" pin="GND"/>
@@ -16949,9 +17678,9 @@ low Z at low F). Try to block everything
 <pinref part="U$67" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C34" gate="G$1" pin="2"/>
 <pinref part="U$68" gate="G$1" pin="GND"/>
 <wire x1="58.42" y1="-292.1" x2="58.42" y2="-294.64" width="0.1524" layer="91"/>
+<pinref part="C25" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U8" gate="G$1" pin="GND"/>
@@ -17207,15 +17936,15 @@ low Z at low F). Try to block everything
 <label x="-177.8" y="43.18" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="C20" gate="G$1" pin="2"/>
 <pinref part="R21" gate="G$1" pin="2"/>
 <wire x1="50.8" y1="-193.04" x2="45.72" y2="-193.04" width="0.1524" layer="91"/>
-<junction x="50.8" y="-193.04"/>
 <label x="38.1" y="-193.04" size="1.778" layer="95"/>
 <pinref part="C30" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="-193.04" x2="35.56" y2="-193.04" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="-190.5" x2="45.72" y2="-193.04" width="0.1524" layer="91"/>
 <junction x="45.72" y="-193.04"/>
+<pinref part="C20" gate="G$1" pin="1"/>
+<junction x="50.8" y="-193.04"/>
 </segment>
 </net>
 <net name="P0.09/NFC1" class="0">
@@ -17446,12 +18175,13 @@ low Z at low F). Try to block everything
 <wire x1="-165.1" y1="30.48" x2="-170.18" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$43" gate="G$1" pin="VBAT"/>
-<pinref part="Q3" gate="G$1" pin="D"/>
-</segment>
-<segment>
 <pinref part="U$14" gate="G$1" pin="VBAT"/>
 <pinref part="R4" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<pinref part="U$43" gate="G$1" pin="VBAT"/>
+<pinref part="SW3" gate="G$1" pin="P"/>
+<wire x1="-22.86" y1="101.6" x2="-22.86" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -17619,15 +18349,15 @@ low Z at low F). Try to block everything
 <label x="-177.8" y="38.1" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="C33" gate="G$1" pin="2"/>
 <pinref part="R34" gate="G$1" pin="2"/>
 <wire x1="53.34" y1="-271.78" x2="48.26" y2="-271.78" width="0.1524" layer="91"/>
-<junction x="53.34" y="-271.78"/>
 <label x="40.64" y="-271.78" size="1.778" layer="95"/>
 <pinref part="C37" gate="G$1" pin="2"/>
 <wire x1="48.26" y1="-271.78" x2="38.1" y2="-271.78" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="-269.24" x2="48.26" y2="-271.78" width="0.1524" layer="91"/>
 <junction x="48.26" y="-271.78"/>
+<pinref part="C26" gate="G$1" pin="1"/>
+<junction x="53.34" y="-271.78"/>
 </segment>
 </net>
 <net name="VCCA" class="0">
@@ -17788,26 +18518,26 @@ low Z at low F). Try to block everything
 <wire x1="73.66" y1="-203.2" x2="58.42" y2="-203.2" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="-203.2" x2="55.88" y2="-203.2" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="-203.2" x2="55.88" y2="-200.66" width="0.1524" layer="91"/>
-<pinref part="C21" gate="G$1" pin="1"/>
 <wire x1="55.88" y1="-203.2" x2="55.88" y2="-205.74" width="0.1524" layer="91"/>
 <junction x="55.88" y="-203.2"/>
-<pinref part="R20" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="-198.12" x2="58.42" y2="-203.2" width="0.1524" layer="91"/>
 <junction x="58.42" y="-203.2"/>
 <pinref part="SUPPLY4" gate="G$1" pin="VCC_2"/>
+<pinref part="C21" gate="G$1" pin="1"/>
+<pinref part="R20" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U8" gate="G$1" pin="VDD"/>
 <wire x1="76.2" y1="-281.94" x2="60.96" y2="-281.94" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="-281.94" x2="58.42" y2="-281.94" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="-281.94" x2="58.42" y2="-279.4" width="0.1524" layer="91"/>
-<pinref part="C34" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="-281.94" x2="58.42" y2="-284.48" width="0.1524" layer="91"/>
 <junction x="58.42" y="-281.94"/>
-<pinref part="R33" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="-276.86" x2="60.96" y2="-281.94" width="0.1524" layer="91"/>
 <junction x="60.96" y="-281.94"/>
 <pinref part="SUPPLY6" gate="G$1" pin="VCC_2"/>
+<pinref part="C25" gate="G$1" pin="1"/>
+<pinref part="R24" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="CO1" class="0">
@@ -17841,8 +18571,8 @@ low Z at low F). Try to block everything
 <net name="N$21" class="0">
 <segment>
 <pinref part="R18" gate="G$1" pin="1"/>
-<pinref part="C20" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="-193.04" x2="58.42" y2="-193.04" width="0.1524" layer="91"/>
+<pinref part="C20" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -17889,20 +18619,20 @@ low Z at low F). Try to block everything
 </net>
 <net name="N$24" class="0">
 <segment>
-<pinref part="C19" gate="G$1" pin="1"/>
 <pinref part="R19" gate="G$1" pin="1"/>
 <wire x1="58.42" y1="-182.88" x2="60.96" y2="-182.88" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
-<pinref part="C19" gate="G$1" pin="2"/>
 <pinref part="R21" gate="G$1" pin="1"/>
 <pinref part="R22" gate="G$1" pin="2"/>
 <wire x1="50.8" y1="-180.34" x2="50.8" y2="-182.88" width="0.1524" layer="91"/>
 <junction x="50.8" y="-182.88"/>
 <pinref part="C30" gate="G$1" pin="1"/>
 <wire x1="50.8" y1="-182.88" x2="45.72" y2="-182.88" width="0.1524" layer="91"/>
+<pinref part="C19" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="A7/0.31" class="0">
@@ -17971,7 +18701,7 @@ low Z at low F). Try to block everything
 <pinref part="U6" gate="G$1" pin="/SD"/>
 <wire x1="73.66" y1="-198.12" x2="68.58" y2="-198.12" width="0.1524" layer="91"/>
 <label x="68.58" y="-198.12" size="1.778" layer="95"/>
-<pinref part="R20" gate="G$1" pin="2"/>
+<pinref part="R20" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$35" class="0">
@@ -17991,8 +18721,8 @@ low Z at low F). Try to block everything
 <net name="N$37" class="0">
 <segment>
 <pinref part="R31" gate="G$1" pin="1"/>
-<pinref part="C33" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="-271.78" x2="60.96" y2="-271.78" width="0.1524" layer="91"/>
+<pinref part="C26" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$38" class="0">
@@ -18011,20 +18741,20 @@ low Z at low F). Try to block everything
 </net>
 <net name="N$40" class="0">
 <segment>
-<pinref part="C32" gate="G$1" pin="1"/>
 <pinref part="R32" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="-261.62" x2="63.5" y2="-261.62" width="0.1524" layer="91"/>
+<pinref part="C24" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$41" class="0">
 <segment>
-<pinref part="C32" gate="G$1" pin="2"/>
 <pinref part="R34" gate="G$1" pin="1"/>
 <pinref part="R35" gate="G$1" pin="2"/>
 <wire x1="53.34" y1="-259.08" x2="53.34" y2="-261.62" width="0.1524" layer="91"/>
 <junction x="53.34" y="-261.62"/>
 <pinref part="C37" gate="G$1" pin="1"/>
 <wire x1="53.34" y1="-261.62" x2="48.26" y2="-261.62" width="0.1524" layer="91"/>
+<pinref part="C24" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="SD2" class="0">
@@ -18032,7 +18762,7 @@ low Z at low F). Try to block everything
 <pinref part="U8" gate="G$1" pin="/SD"/>
 <wire x1="76.2" y1="-276.86" x2="71.12" y2="-276.86" width="0.1524" layer="91"/>
 <label x="71.12" y="-276.86" size="1.778" layer="95"/>
-<pinref part="R33" gate="G$1" pin="2"/>
+<pinref part="R24" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="VO1+" class="0">
@@ -18061,6 +18791,14 @@ low Z at low F). Try to block everything
 <wire x1="132.08" y1="-187.96" x2="129.54" y2="-187.96" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="-187.96" x2="129.54" y2="-193.04" width="0.1524" layer="91"/>
 <pinref part="J3" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$26" class="0">
+<segment>
+<pinref part="SW3" gate="G$1" pin="S"/>
+<pinref part="Q3" gate="G$1" pin="D"/>
+<wire x1="-25.4" y1="91.44" x2="-22.86" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="-22.86" y1="91.44" x2="-22.86" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
