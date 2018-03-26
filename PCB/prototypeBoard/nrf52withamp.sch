@@ -17039,6 +17039,8 @@ low Z at low F). Try to block everything
 <text x="106.68" y="-254" size="1.778" layer="97">ToDo: Ferrite (select w/high Z at high F,
 low Z at low F). Try to block everything
 &gt;1MHz or so.</text>
+<text x="-124.46" y="-25.4" size="6.4516" layer="95">RXTX wrong!!!!</text>
+<text x="45.72" y="-99.06" size="6.4516" layer="95">ADD CLK PULLUP ON CLK OUT!</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="12.7" y="7.62">

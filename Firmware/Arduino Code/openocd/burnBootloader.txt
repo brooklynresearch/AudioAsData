@@ -1,0 +1,1 @@
+bin/openocd -f scripts/interface/stlink-v2.cfg -f scripts/target/nrf52.cfg -c init -c "reset init" -c halt -c "" -c "program /Users/sundeqing/Library/Arduino15/packages/adafruit/hardware/nrf52/0.8.2/bin/bootloader/feather52/0.5.0/dual/feather52_bootloader_v050_s132_v201.hex verify" -c reset -c exit
