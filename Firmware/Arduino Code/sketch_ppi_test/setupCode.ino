@@ -92,3 +92,20 @@ void timer1_init(void)
   //NVIC_SetPriority(TIMER1_IRQn, 1);
   //NVIC_EnableIRQ(TIMER1_IRQn);
 }
+
+void sendLEDValue(uint8_t r1, uint8_t g1, uint8_t b1, uint8_t r2, uint8_t g2, uint8_t b2) {
+  SPI.transfer(0);
+  SPI.transfer(0);
+  SPI.transfer(0);
+  SPI.transfer(0);
+  SPI.transfer(0xFF);
+  SPI.transfer(b1);
+  SPI.transfer(g1);
+  SPI.transfer(r1);
+  SPI.transfer(0xFF);
+  SPI.transfer(b2);
+  SPI.transfer(g2);
+  SPI.transfer(r2);
+  SPI.transfer(0xFF);
+  SPI.transfer(0xFF);
+}

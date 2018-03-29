@@ -1,7 +1,15 @@
-#define SIGNAL_LEVEL_PIN A1
+#define SIGNAL_LEVEL_PIN A6
 #define DEBUG_PIN1 A5
 #define DEBUG_PIN2 A4
 #define NRF52_BLUE_LED 19
+
+#define BUZZER1_PIN1 11
+#define BUZZER1_PIN2 7
+
+#define BUZZER2_PIN1 15
+#define BUZZER2_PIN2 16
+
+#include <SPI.h>
 
 extern "C"  //https://forums.adafruit.com/viewtopic.php?f=24&t=125410
 {
@@ -42,6 +50,12 @@ void setup() {
   pinMode(DEBUG_PIN1, OUTPUT);
   pinMode(DEBUG_PIN2, OUTPUT);
 
+  pinMode(BUZZER1_PIN1, OUTPUT);
+  pinMode(BUZZER1_PIN2, OUTPUT);
+
+  pinMode(BUZZER2_PIN1, OUTPUT);
+  pinMode(BUZZER2_PIN2, OUTPUT);
+
   Serial.begin(115200);
 
   //set up PWM
@@ -50,22 +64,35 @@ void setup() {
 
   HwPWM2.setClockDiv(PWM_PRESCALER_PRESCALER_DIV_64);
 
-  HwPWM2.addPin(DEBUG_PIN1);  //add motorPWM to PWM2
-  HwPWM2.addPin(DEBUG_PIN2);  //add motorPWM to PWM2
+  HwPWM2.addPin(BUZZER1_PIN1);  //add motorPWM to PWM2
+  HwPWM2.addPin(BUZZER1_PIN2);  //add motorPWM to PWM2
+
+  HwPWM2.addPin(BUZZER2_PIN1);  //add motorPWM to PWM2
+  HwPWM2.addPin(BUZZER2_PIN2);  //add motorPWM to PWM2
 
   HwPWM2.setMaxValue(1250); //freq: 16E6/64/1250/2
   HwPWM2.writeChannel(0, 1, false);
   HwPWM2.writeChannel(1, 1250 - 1, true);
+  HwPWM2.writeChannel(2, 1, false);
+  HwPWM2.writeChannel(3, 1250 - 1, true);
 
   ppi_init();
   timer1_init(); // Timer used to increase m_counter every 100ms.
   saadc_init();
   saadc_read();// Trigger first SAADC read
+
+  SPI.begin();
+  SPI.setClockDivider((F_CPU + 4000000L) / 2000000L); // 2-ish MHz on Due
+  SPI.setBitOrder(MSBFIRST);
+  SPI.setDataMode(SPI_MODE0);
 }
 
 
 
 void loop() {
+  bool ledUpdate = false;
+  int led1Value, led2Value;
+
   if (newData) {
     int32_t demodulateValue = demodulate8Byte((int16_t *)historyBuffer);
 
@@ -95,14 +122,18 @@ void loop() {
         }
         if (receivedData[4] == crcValue) {
           //Serial.println(dataBuffer,HEX);
-          analogWrite(NRF52_BLUE_LED, receivedData[0]);
-          analogWrite(LED_BUILTIN, receivedData[1]);
+          ledUpdate = true;
+          led1Value = receivedData[0];
+          led2Value = receivedData[1];
+
           //set Motor
           int pwmMaxValue = 125000 / receivedData[2];
           HwPWM2.setMaxValue(pwmMaxValue); //freq: 16E6/64/1250/2
-          int pwmValue = pwmMaxValue*receivedData[3]>>9;
+          int pwmValue = pwmMaxValue * receivedData[3] >> 9;
           HwPWM2.writeChannel(0, pwmValue, false);
           HwPWM2.writeChannel(1, pwmMaxValue - pwmValue, true);
+          HwPWM2.writeChannel(2, pwmValue, false);
+          HwPWM2.writeChannel(3, pwmMaxValue - pwmValue, true);
 
           receivedLength = 0;
           memset(receivedData, 0, 5);
@@ -116,6 +147,10 @@ void loop() {
     digitalWrite(SIGNAL_LEVEL_PIN, outputBit);
 
     newData = false;
+  }
+
+  if (ledUpdate) {
+    sendLEDValue(led1Value, led1Value, led1Value, led2Value, led2Value, led2Value);
   }
 }
 
