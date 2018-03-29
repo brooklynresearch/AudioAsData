@@ -1,0 +1,12 @@
+Measured on Mar 29 2018. With nrf52withamp.brd, Lofelt actuator, OTOjOY induction loop sensor.
+
+Current measured on VBus with Fluke 15B 
+
+LED off, Motor off: 19.25 mA
+1 LED Full brightness, Motor off: 34.65mA
+2 LED Full brightness, Motor off: 55.2mA
+LED off, Motor full vibration @ 100hz: 317 mA
+LED off, Motor full vibration @ 10hz: 351 mA
+2 LED Full brightness, Motor full vibration @ 100hz: 351mA
+2 LED Full brightness, Motor full vibration @ 10hz: 388mA
+

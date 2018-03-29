@@ -1,3 +1,5 @@
+//tested with Univox AutoLoop 2.0 Home Hearing Loop System, modulated with bell202
+
 #define SIGNAL_LEVEL_PIN A6
 #define DEBUG_PIN1 A5
 #define DEBUG_PIN2 A4
@@ -85,6 +87,11 @@ void setup() {
   SPI.setClockDivider((F_CPU + 4000000L) / 2000000L); // 2-ish MHz on Due
   SPI.setBitOrder(MSBFIRST);
   SPI.setDataMode(SPI_MODE0);
+
+  
+  analogWrite(NRF52_BLUE_LED, 0); //set up PWM, This should be on channel 0 of HwPWM0
+  analogWrite(LED_BUILTIN, 0); //channel 1 of HwPWM0
+
 }
 
 
